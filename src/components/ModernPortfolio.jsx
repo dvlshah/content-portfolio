@@ -18,6 +18,10 @@ import {
   Divider,
   useColorModeValue,
   VisuallyHidden,
+  IconButton,
+  useColorMode,
+  Collapse,
+  Fade,
 } from '@chakra-ui/react';
 import {
   ChevronDownIcon,
@@ -28,9 +32,16 @@ import {
   FaLinkedin, 
   FaMedium, 
   FaBuilding, 
-  FaEnvelope 
+  FaEnvelope,
+  FaChevronDown,
+  FaChevronUp,
+  FaMoon,
+  FaSun
 } from 'react-icons/fa';
-import { logEvent, trackEngagement } from '../utils/analytics';
+import {
+  logEvent, 
+  trackEngagement 
+} from '../utils/analytics';
 import BlogCard from './BlogCard';
 import CompaniesSection from './CompaniesSection';
 import HeroSection from './HeroSection';
@@ -53,6 +64,9 @@ export default function ModernPortfolio() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [sortBy, setSortBy] = useState(SORT_OPTIONS.NEWEST);
   const [searchResults, setSearchResults] = useState(null);
+  const [showAllBlogs, setShowAllBlogs] = useState(false);
+  const { colorMode, toggleColorMode } = useColorMode();
+  const INITIAL_BLOG_COUNT = 9;
 
   // Theme colors
   const borderColor = useColorModeValue('gray.200', 'gray.700');
@@ -117,6 +131,15 @@ export default function ModernPortfolio() {
     });
   }, [searchResults, activeFilter, regularBlogs, sortBy]);
 
+  const displayedBlogs = useMemo(() => {
+    const sortedAndFiltered = filteredAndSortedBlogs || [];
+    return showAllBlogs 
+      ? sortedAndFiltered 
+      : sortedAndFiltered.slice(0, INITIAL_BLOG_COUNT);
+  }, [filteredAndSortedBlogs, showAllBlogs]);
+
+  const hasMoreBlogs = (filteredAndSortedBlogs?.length || 0) > INITIAL_BLOG_COUNT;
+
   // Track section views
   useEffect(() => {
     const sections = ['hero', 'featured', 'search', 'companies'];
@@ -141,6 +164,21 @@ export default function ModernPortfolio() {
 
   return (
     <Box minH="100vh">
+      <Box position="fixed" top={4} right={4} zIndex={2}>
+        <IconButton
+          aria-label={`Switch to ${colorMode === 'light' ? 'dark' : 'light'} mode`}
+          icon={<Icon as={colorMode === 'light' ? FaMoon : FaSun} />}
+          onClick={toggleColorMode}
+          size="lg"
+          variant="ghost"
+          colorScheme="blue"
+          _hover={{
+            transform: 'scale(1.1)',
+          }}
+          transition="all 0.2s"
+        />
+      </Box>
+
       <div id="hero">
         <HeroSection 
           totalArticles={blogs?.length || 0}
@@ -242,18 +280,37 @@ export default function ModernPortfolio() {
             </Box>
 
             {/* Results Section */}
-            <SimpleGrid 
-              columns={{ base: 1, md: 2, lg: 3 }} 
-              spacing={8} 
-              w="full"
-            >
-              {filteredAndSortedBlogs.map((blog) => (
-                <BlogCard 
-                  key={blog.source_url} 
-                  blog={blog}
-                />
-              ))}
-            </SimpleGrid>
+            <VStack spacing={8} align="stretch">
+              <SimpleGrid 
+                columns={{ base: 1, md: 2, lg: 3 }} 
+                spacing={8} 
+                w="full"
+              >
+                {displayedBlogs.map((blog) => (
+                  <Fade in key={blog.source_url}>
+                    <BlogCard blog={blog} />
+                  </Fade>
+                ))}
+              </SimpleGrid>
+
+              {hasMoreBlogs && (
+                <Box textAlign="center" pt={4}>
+                  <Button
+                    onClick={() => setShowAllBlogs(!showAllBlogs)}
+                    variant="ghost"
+                    colorScheme="blue"
+                    size="lg"
+                    rightIcon={showAllBlogs ? <FaChevronUp /> : <FaChevronDown />}
+                    _hover={{
+                      transform: 'translateY(-2px)',
+                    }}
+                    transition="all 0.2s"
+                  >
+                    {showAllBlogs ? 'Show Less' : 'Show More'}
+                  </Button>
+                </Box>
+              )}
+            </VStack>
           </VStack>
         </Container>
       </div>

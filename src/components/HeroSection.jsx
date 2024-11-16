@@ -129,18 +129,6 @@ const RotatingText = () => {
         bgGradient="linear(to-r, blue.400, purple.500)"
         bgClip="text"
         position="relative"
-        _after={{
-          content: '""',
-          width: '102%',
-          height: '100%',
-          position: 'absolute',
-          left: '-1%',
-          bottom: '-10%',
-          bgGradient: "linear(to-r, blue.400, purple.500)",
-          filter: 'blur(30px)',
-          opacity: 0.3,
-          zIndex: -1,
-        }}
       >
         {displayText}
       </Box>

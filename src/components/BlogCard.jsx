@@ -11,11 +11,11 @@ import {
   Heading,
   useColorModeValue,
   Skeleton,
-  AspectRatio
+  AspectRatio,
+  Icon,
 } from '@chakra-ui/react';
 import { CalendarIcon } from '@chakra-ui/icons';
 import { motion } from 'framer-motion';
-import { logEvent } from '../utils/analytics';
 import { format } from 'date-fns';
 
 const MotionBox = motion(Box);
@@ -24,20 +24,15 @@ const BlogCard = ({ blog, featured = false }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const [shouldLoad, setShouldLoad] = useState(false);
   
+  // Theme colors
   const bgColor = useColorModeValue('white', 'gray.800');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
-
-  // Format date
+  const textColor = useColorModeValue('gray.600', 'gray.400');
+  const headingColor = useColorModeValue('gray.800', 'white');
+  const tagBg = useColorModeValue('blue.50', 'blue.900');
+  const tagColor = useColorModeValue('blue.600', 'blue.200');
+  
   const formattedDate = blog.date ? format(new Date(blog.date), 'MMM dd, yyyy') : '';
-
-  // Track blog card click
-  const handleBlogClick = () => {
-    logEvent('Blog', 'Click', {
-      title: blog.title,
-      company: blog.company,
-      date: formattedDate
-    });
-  };
 
   // Intersection Observer for lazy loading
   useEffect(() => {
@@ -48,10 +43,7 @@ const BlogCard = ({ blog, featured = false }) => {
           observer.disconnect();
         }
       },
-      {
-        rootMargin: '50px',
-        threshold: 0.1
-      }
+      { rootMargin: '50px' }
     );
 
     const element = document.getElementById(`blog-${blog.source_url}`);
@@ -60,14 +52,10 @@ const BlogCard = ({ blog, featured = false }) => {
     return () => observer.disconnect();
   }, [blog.source_url]);
 
-  // Generate smaller thumbnail URL
-  const thumbnailUrl = blog.image?.replace('/800/600', '/400/300') || '';
-
   return (
     <MotionBox
       id={`blog-${blog.source_url}`}
       as={LinkBox}
-      onClick={handleBlogClick}
       borderWidth="1px"
       borderColor={borderColor}
       borderRadius="xl"
@@ -96,16 +84,13 @@ const BlogCard = ({ blog, featured = false }) => {
           >
             {shouldLoad && (
               <Image
-                src={thumbnailUrl}
+                src={blog.image}
                 alt={blog.title}
                 objectFit="cover"
                 width="100%"
                 height="100%"
                 loading="lazy"
                 onLoad={() => setIsImageLoaded(true)}
-                srcSet={`${thumbnailUrl} 400w, ${blog.image} 800w`}
-                sizes="(max-width: 768px) 400px, 800px"
-                fallbackSrc="https://via.placeholder.com/400x300?text=Loading..."
                 transition="opacity 0.3s"
                 opacity={isImageLoaded ? 1 : 0}
               />
@@ -117,29 +102,37 @@ const BlogCard = ({ blog, featured = false }) => {
       <VStack p={6} spacing={4} align="stretch" flex="1">
         <VStack spacing={3} align="start" w="full">
           <HStack spacing={2} justify="space-between" w="full">
-            <Tag colorScheme="purple" size="sm">
+            <Tag 
+              size="md" 
+              bg={tagBg}
+              color={tagColor}
+              fontWeight="600"
+              px={3}
+              py={1}
+            >
               {blog.company}
             </Tag>
-            <HStack spacing={1} color="gray.500" fontSize="sm" align="center">
-              <CalendarIcon boxSize={3} />
+            <HStack spacing={1} color={textColor} fontSize="sm">
+              <Icon as={CalendarIcon} boxSize={3} />
               <Text>{formattedDate}</Text>
             </HStack>
           </HStack>
 
           <LinkOverlay href={blog.source_url} isExternal>
             <Heading
-              size={featured ? 'lg' : 'md'}
+              size={featured ? 'md' : 'sm'}
               lineHeight="tight"
               noOfLines={2}
+              color={headingColor}
               _hover={{ color: 'blue.500' }}
-              mb={2}
+              transition="color 0.2s"
             >
               {blog.title}
             </Heading>
           </LinkOverlay>
 
           <Text
-            color="gray.500"
+            color={textColor}
             noOfLines={3}
             fontSize="sm"
             lineHeight="tall"
@@ -153,7 +146,8 @@ const BlogCard = ({ blog, featured = false }) => {
             <Tag
               key={index}
               size="sm"
-              colorScheme="blue"
+              bg={tagBg}
+              color={tagColor}
               variant="subtle"
             >
               {tag}
