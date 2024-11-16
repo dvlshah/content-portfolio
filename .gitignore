@@ -57,3 +57,7 @@ Thumbs.db
 repopack-output.txt
 temp.py
 Project Portfolio.code-workspace
+
+.env
+.env.local
+.env.*.local
