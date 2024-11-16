@@ -2,6 +2,9 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
+  "env": {
+    "VITE_PEXELS_API_KEY": "@vite_pexels_api_key"
+  },
   "rewrites": [
     {
       "source": "/(.*)",
