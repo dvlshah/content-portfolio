@@ -1,8 +1,8 @@
 export const blogData = [
   {
-    "title": "Reinforcement Learning from Human Feedback (RLHF): Bridging AI and Human Expertise | Lakera \u2013 Protecting AI teams that disrupt the world.",
+    "title": "Reinforcement Learning from Human Feedback (RLHF): Bridging AI and Human Expertise | Lakera – Protecting AI teams that disrupt the world.",
     "excerpt": "Unlock the secrets to safeguarding your AI systems with Lakera's GenAI Security Readiness Report 2024. Dive into expert insights on the most common vulnerabilities and learn how to fortify your defenses against emerging threats. Essential reading for anyone looking to protect their data and ensure AI integrity.",
-    "date": "2024-01-01",
+    "date": "2024-04-10",
     "author": "Deval",
     "tags": [
       "AI Security",
@@ -12,13 +12,12 @@ export const blogData = [
       "Tech Trends 2024"
     ],
     "company": "Lakera",
-    "source_url": "https://www.lakera.ai/blog/reinforcement-learning-from-human-feedback",
-    "featured": true
+    "source_url": "https://www.lakera.ai/blog/reinforcement-learning-from-human-feedback"
   },
   {
-    "title": "Foundation Models Explained: Everything You Need to Know in 2023 | Lakera \u2013 Protecting AI teams that disrupt the world.",
+    "title": "Foundation Models Explained: Everything You Need to Know in 2023 | Lakera – Protecting AI teams that disrupt the world.",
     "excerpt": "Unlock the secrets to safeguarding your data with Lakera's GenAI Security Readiness Report 2024. This comprehensive guide reveals crucial insights into the vulnerabilities of Large Language Models (LLMs) and equips you with effective strategies to protect against potential data breaches. Stay ahead of the curve and ensure your systems are ready for the AI-driven future. Download now and fortify your defenses!",
-    "date": "2000-01-01",
+    "date": "2023-09-07",
     "author": "Deval",
     "tags": [
       "Generative AI",
@@ -26,16 +25,15 @@ export const blogData = [
       "LLM vulnerabilities",
       "Data protection",
       "Technology",
-      "Artificial Intelligence"
+      "AI"
     ],
     "company": "Lakera",
-    "source_url": "https://www.lakera.ai/blog/foundation-models-explained",
-    "featured": true
+    "source_url": "https://www.lakera.ai/blog/foundation-models-explained"
   },
   {
     "title": "Urban Air Mobility Takes Off",
     "excerpt": "Imagine a city where drones and air taxis seamlessly navigate the skies, transforming urban transport into a swift, efficient, and eco-friendly experience. Urban Air Mobility (UAM) is not just a concept but an evolving reality, with nations like the U.S., Germany, and Japan at the forefront of its development. Dive into the world of eVTOLs and explore how innovations promise to redefine travel and logistics in bustling metropolises.",
-    "date": "2000-01-01",
+    "date": "2023-12-18",
     "author": "Deval",
     "tags": [
       "Urban Air Mobility",
@@ -65,9 +63,9 @@ export const blogData = [
     "source_url": "https://www.aporia.com/learn/rag-in-production/"
   },
   {
-    "title": "What is In-context Learning, and how does it work: The Beginner\u2019s Guide | Lakera \u2013 Protecting AI teams that disrupt the world.",
+    "title": "What is In-context Learning, and how does it work: The Beginner’s Guide | Lakera – Protecting AI teams that disrupt the world.",
     "excerpt": "Uncover critical insights into the security landscape of Large Language Models (LLMs) with Lakera's GenAI Security Readiness Report 2024. This essential guide reveals common vulnerabilities and offers strategies to protect your data from potential breaches. Equip yourself with the knowledge to navigate AI-driven environments securely. Download now!",
-    "date": "2000-01-01",
+    "date": "2023-09-22",
     "author": "Deval",
     "tags": [
       "GenAI",
@@ -82,10 +80,10 @@ export const blogData = [
   {
     "title": "LoRaWAN Wireless Condition Monitoring",
     "excerpt": "Unlock the future of industrial maintenance with Condition Monitoring, a game-changing strategy that leverages real-time data to optimize machinery performance. Discover how transitioning to condition-based maintenance can lead to cost savings, enhanced reliability, and improved safety by focusing on the actual condition of equipment rather than a fixed schedule.",
-    "date": "2000-01-01",
+    "date": "2024-02-23",
     "author": "Deval",
     "tags": [
-      "IIoT",
+      "IoT",
       "IoT",
       "manufacturing systems",
       "Wi-Fi"
@@ -94,9 +92,9 @@ export const blogData = [
     "source_url": "https://www.wevolver.com/article/lorawan-wireless-condition-monitoring"
   },
   {
-    "title": "The ELI5 Guide to Prompt Injection: Techniques, Prevention Methods & Tools | Lakera \u2013 Protecting AI teams that disrupt the world.",
-    "excerpt": "Unlock the secrets to safeguarding your data with Lakera's GenAI Security Readiness Report 2024. Dive deep into the world of Large Language Models (LLMs) and discover strategies to combat common vulnerabilities. Stay ahead of the curve and ensure your organization's security with our expert insights. Don't let your data be at risk\u2014download now!",
-    "date": "2024-01-01",
+    "title": "The ELI5 Guide to Prompt Injection: Techniques, Prevention Methods & Tools | Lakera – Protecting AI teams that disrupt the world.",
+    "excerpt": "Unlock the secrets to safeguarding your data with Lakera's GenAI Security Readiness Report 2024. Dive deep into the world of Large Language Models (LLMs) and discover strategies to combat common vulnerabilities. Stay ahead of the curve and ensure your organization's security with our expert insights. Don't let your data be at risk—download now!",
+    "date": "2023-05-25",
     "author": "Deval",
     "tags": [
       "GenAI Security",
@@ -111,10 +109,10 @@ export const blogData = [
   {
     "title": "Revolutionizing Healthcare: The Profound Impact of TinyML and Machine Learning on Medical Outcomes",
     "excerpt": "Dive into the world of TinyML and Machine Learning in healthcare, where wearable technology is enhancing early detection of heart arrhythmias and reducing hospital readmissions. Discover how predictive analytics and real-time data processing are revolutionizing patient care, from tailored medication delivery to accurate diagnostics in diabetic retinopathy. Uncover the future of personalized healthcare today.",
-    "date": "2000-01-01",
+    "date": "2023-08-31",
     "author": "Deval",
     "tags": [
-      "Artificial Intelligence",
+      "AI",
       "Healthcare",
       "Machine Learning",
       "TinyML",
@@ -141,7 +139,7 @@ export const blogData = [
   {
     "title": "Steering IoT Innovation in Global Asset Expeditions and Fleet Journeys",
     "excerpt": "Discover how Particle's cutting-edge IoT solutions are revolutionizing global asset tracking and fleet management. With real-time data insights and enhanced asset control, businesses can navigate the complexities of global supply chains, reduce costs, and ensure regulatory compliance. Join the IoT innovation wave and transform your operations today.",
-    "date": "2000-01-01",
+    "date": "2024-04-17",
     "author": "Deval",
     "tags": [
       "IoT",
@@ -156,11 +154,11 @@ export const blogData = [
   {
     "title": "Unearthing the Potential of Precision Agriculture",
     "excerpt": "Unlock the future of farming with precision agriculture. Dive into how cutting-edge technologies and data-driven insights are revolutionizing crop management, enhancing efficiency, and reducing environmental footprints. Discover the innovations that are setting the stage for sustainable agriculture, ensuring both productivity and ecological balance. Join the movement towards smarter, data-centric farming today!",
-    "date": "2000-01-01",
+    "date": "2024-05-08",
     "author": "Deval",
     "tags": [
       "Agriculture",
-      "IIoT",
+      "IoT",
       "IoT",
       "sensors",
       "Precision Agriculture"
@@ -171,10 +169,10 @@ export const blogData = [
   {
     "title": "Enhancing Quality Control with Machine Vision Systems",
     "excerpt": "Unlock the potential of Machine Vision Systems to revolutionize manufacturing quality control. Discover how AI and deep learning drive these systems to deliver unmatched accuracy and efficiency, reduce human error, and ensure consistent quality in industries like electronics, pharmaceuticals, and automotive.",
-    "date": "2000-01-01",
+    "date": "2023-07-04",
     "author": "Deval",
     "tags": [
-      "artificial intelligence",
+      "AI",
       "computer vision",
       "machine learning",
       "manufacturing systems"
@@ -200,7 +198,7 @@ export const blogData = [
   {
     "title": "Enhancing Battery Health with Machine Learning",
     "excerpt": "Unlock the potential of your electric vehicle's battery with cutting-edge machine learning technology. Discover how real-time data analysis can predict battery life, enhance efficiency, and prevent unexpected failures. Stay ahead with innovative solutions for smarter battery management.",
-    "date": "2000-01-01",
+    "date": "2023-08-25",
     "author": "Deval",
     "tags": [
       "battery management system (BMS)",
@@ -214,7 +212,7 @@ export const blogData = [
   {
     "title": "Ensuring the Safety of Fur Babies: The Role of GNSS in Advanced Pet Trackers",
     "excerpt": "Keep your furry friends safe and secure with cutting-edge GNSS technology in advanced pet trackers. Discover how the u-blox M10 platform ensures high-precision tracking, offering peace of mind for pet owners. Explore the evolution from RFID to GPS, and learn how modern innovations are revolutionizing pet safety and tracking. Don't let your pet get lost in the crowd; stay connected and informed with the latest in pet tracking technology.",
-    "date": "2023-10-10",
+    "date": "2023-12-12",
     "author": "Deval",
     "tags": [
       "GNSS",
@@ -246,10 +244,10 @@ export const blogData = [
   {
     "title": "Neuromorphic E-Noses in Medical and Industrial Applications",
     "excerpt": "Unlock the potential of neuromorphic computing with our breakthrough in electronic nose technology, designed to revolutionize medical diagnostics and industrial applications. By leveraging spiking neural networks and innovative encoding algorithms, our solution enhances accuracy and efficiency, paving the way for timely and precise bacterial detection.",
-    "date": "2000-01-01",
+    "date": "2023-12-18",
     "author": "Deval",
     "tags": [
-      "artificial intelligence",
+      "AI",
       "edge processors",
       "sensors",
       "neuromorphic computing",
@@ -262,10 +260,10 @@ export const blogData = [
   {
     "title": "Leveraging low-power embedded computer vision to solve urgent sustainability and safety challenges",
     "excerpt": "Unlock the potential of low-power embedded computer vision to transform urban safety and environmental sustainability. Discover how this innovative technology can prevent pedestrian fatalities, reduce aircraft emissions, and maintain ecological balance by controlling invasive species. Explore real-world applications that align with the United Nations' Sustainable Development Goals and drive impactful change in our communities.",
-    "date": "2000-01-01",
+    "date": "2023-08-31",
     "author": "Deval",
     "tags": [
-      "Artificial Intelligence",
+      "AI",
       "Embedded Systems",
       "Sustainability",
       "Public Safety",
@@ -277,10 +275,10 @@ export const blogData = [
   {
     "title": "Balancing the Cloud and the Edge: A Close look at Enabling Hybrid AI",
     "excerpt": "Discover how hybrid AI solutions are revolutionizing data processing by balancing cloud computational power with real-time edge-device capabilities. Qualcomm spearheads this transformation with pioneering on-device Generative AI technologies, enhancing performance, privacy, and energy efficiency across a wide array of devices.",
-    "date": "2000-01-01",
+    "date": "2023-09-21",
     "author": "Deval",
     "tags": [
-      "artificial intelligence",
+      "AI",
       "Edge AI",
       "Low power consumption",
       "hybrid AI",
@@ -297,7 +295,7 @@ export const blogData = [
     "tags": [
       "Generative AI",
       "RAG",
-      "Artificial Intelligence",
+      "AI",
       "Technology",
       "Innovation"
     ],
@@ -307,12 +305,12 @@ export const blogData = [
   {
     "title": "Seeed Studio ReComputer Industrial AI Devices for Engineers",
     "excerpt": "Unleash the power of AI in your industrial operations with Seeed Studio's ReComputer Industrial series. These state-of-the-art devices, built on NVIDIA's cutting-edge technology, offer unmatched computational performance and are designed to thrive in extreme conditions. From smart cities to medical imaging, explore how these AI solutions can transform your industry with precision and efficiency.",
-    "date": "2023-05-16",
+    "date": "2023-11-24",
     "author": "Deval",
     "tags": [
-      "artificial intelligence",
+      "AI",
       "computing",
-      "IIoT",
+      "IoT",
       "industrial automation",
       "NVIDIA",
       "AI devices"
@@ -323,7 +321,7 @@ export const blogData = [
   {
     "title": "Revolutionizing Pipeline Inspection: The Power of the ROCK 3 Compute Module",
     "excerpt": "Unlock the future of pipeline inspection with the revolutionary OKdo ROCK 3 Compute Module. This compact powerhouse combines precision, connectivity, and performance, transforming how industries monitor and maintain crucial pipeline systems. Discover how this innovation ensures safety and efficiency across challenging environments.",
-    "date": "2000-01-01",
+    "date": "2024-04-16",
     "author": "Deval",
     "tags": [
       "Bluetooth",
@@ -342,7 +340,7 @@ export const blogData = [
     "author": "Deval",
     "tags": [
       "Generative AI",
-      "Artificial Intelligence",
+      "AI",
       "Machine Learning",
       "AI Applications",
       "Technology Trends"
@@ -351,9 +349,9 @@ export const blogData = [
     "source_url": "https://www.v7labs.com/blog/generative-ai-guide"
   },
   {
-    "title": "Remote Code Execution: A Guide to RCE Attacks & Prevention Strategies | Lakera \u2013 Protecting AI teams that disrupt the world.",
+    "title": "Remote Code Execution: A Guide to RCE Attacks & Prevention Strategies | Lakera – Protecting AI teams that disrupt the world.",
     "excerpt": "Unveil the latest in AI security with Lakera's 2024 GenAI Security Readiness Report. Learn about the top vulnerabilities threatening Large Language Models and discover actionable strategies to safeguard your data. Equip yourself with the knowledge to protect against the evolving landscape of AI threats and enhance your digital security posture. Download the report now to stay ahead in the AI security game!",
-    "date": "2000-01-01",
+    "date": "2024-02-14",
     "author": "Deval",
     "tags": [
       "AI Security",
@@ -368,10 +366,10 @@ export const blogData = [
   {
     "title": "Refining AI's Foundation: Mastering Dataset Curation for Machine Learning",
     "excerpt": "Unlock the full potential of machine learning by mastering dataset curation. Discover essential strategies to refine raw data, ensuring high-quality inputs for your AI models. Tailor your approach to different data types and enhance both accuracy and efficiency in your projects. From versioning to contextualization, learn how to mitigate risks and maximize performance in AI applications.",
-    "date": "2000-01-01",
+    "date": "2024-07-04",
     "author": "Deval",
     "tags": [
-      "artificial intelligence",
+      "AI",
       "big data",
       "machine learning",
       "dataset curation",
@@ -393,11 +391,12 @@ export const blogData = [
       "Language Models"
     ],
     "company": "Aporia",
-    "source_url": "https://www.aporia.com/learn/prompt-engineering/"
+    "source_url": "https://www.aporia.com/learn/prompt-engineering/",
+    "featured": true
   },
   {
     "title": "The Essential Guide to Data Augmentation in Deep Learning",
-    "excerpt": "Unlock the potential of your AI models with data augmentation\u2014a game-changing technique that tackles data scarcity head-on by generating new data points from existing datasets. This guide unravels the magic behind data augmentation, its pivotal role in deep learning, and how it can elevate your model's accuracy and performance. Dive in to discover powerful techniques and real-world use cases, and explore how V7's cutting-edge tools seamlessly integrate with your data augmentation strategy.",
+    "excerpt": "Unlock the potential of your AI models with data augmentation—a game-changing technique that tackles data scarcity head-on by generating new data points from existing datasets. This guide unravels the magic behind data augmentation, its pivotal role in deep learning, and how it can elevate your model's accuracy and performance. Dive in to discover powerful techniques and real-world use cases, and explore how V7's cutting-edge tools seamlessly integrate with your data augmentation strategy.",
     "date": "2022-05-06",
     "author": "Deval",
     "tags": [
@@ -411,9 +410,9 @@ export const blogData = [
     "source_url": "https://www.v7labs.com/blog/data-augmentation-guide"
   },
   {
-    "title": "Embracing the Future: A Comprehensive Guide to Responsible AI | Lakera \u2013 Protecting AI teams that disrupt the world.",
-    "excerpt": "Unlock the future of AI security with Lakera's latest report. Discover the vulnerabilities facing Large Language Models and the strategies you need to protect your data in 2024. Equip your organization with the knowledge to navigate evolving AI threats efficiently and securely. Don't let your data be at risk\u2014download the GenAI Security Readiness Report today!",
-    "date": "2024-01-01",
+    "title": "Embracing the Future: A Comprehensive Guide to Responsible AI | Lakera – Protecting AI teams that disrupt the world.",
+    "excerpt": "Unlock the future of AI security with Lakera's latest report. Discover the vulnerabilities facing Large Language Models and the strategies you need to protect your data in 2024. Equip your organization with the knowledge to navigate evolving AI threats efficiently and securely. Don't let your data be at risk—download the GenAI Security Readiness Report today!",
+    "date": "2024-01-24",
     "author": "Deval",
     "tags": [
       "AI Security",
@@ -422,7 +421,7 @@ export const blogData = [
       "Cybersecurity",
       "GenAI Report"
     ],
-    "company": "Lakera AI",
+    "company": "Lakera",
     "source_url": "https://www.lakera.ai/blog/responsible-ai"
   },
   {
@@ -463,7 +462,7 @@ export const blogData = [
     "date": "2023-10-15",
     "author": "Deval",
     "tags": [
-      "Artificial Intelligence",
+      "AI",
       "Medical Devices",
       "Microchips",
       "Sensors"
@@ -471,7 +470,7 @@ export const blogData = [
     "company": "Wevolver",
     "source_url": "https://www.wevolver.com/article/harnessing-the-okdo-nano-c100-developer-kit-for-leukemia-classification"
   },
-  {
+    {
     "title": "The Essential Guide to Pytorch Loss Functions",
     "excerpt": "Unlock the power of PyTorch with an in-depth dive into loss functions. Master how to set up, define, and monitor these critical components to enhance your deep learning models. Whether using predefined functions or creating custom ones, learn to optimize your model's performance effectively. Perfect for developers and data scientists eager to refine their AI solutions.",
     "date": "2022-07-13",
@@ -489,7 +488,7 @@ export const blogData = [
   {
     "title": "Matter: The Future of Smart Home Connectivity and Its Impact on Product Development",
     "excerpt": "Unlock the potential of the Matter protocol, the groundbreaking standard revolutionizing smart home connectivity. Discover how Matter simplifies device interoperability, accelerates IoT product development, and enhances user experiences. Backed by tech giants like Amazon, Google, and Apple, Matter is set to become the cornerstone of the smart home ecosystem. Dive into its transformative impact on product design and development, and explore the future of seamless smart home connectivity.",
-    "date": "2023-10-01",
+    "date": "2023-07-04",
     "author": "Deval",
     "tags": [
       "IoT",
@@ -500,25 +499,24 @@ export const blogData = [
     "source_url": "https://www.wevolver.com/article/matter-the-future-of-smart-home-connectivity-and-its-impact-on-product-development"
   },
   {
-    "title": "AI Under Siege: Red-Teaming Large Language Models | Lakera \u2013 Protecting AI teams that disrupt the world.",
+    "title": "AI Under Siege: Red-Teaming Large Language Models | Lakera – Protecting AI teams that disrupt the world.",
     "excerpt": "Unlock the secrets to secure AI usage with Lakera's GenAI Security Readiness Report 2024. Navigate LLM vulnerabilities with confidence and protect your data with this comprehensive guide. Equip your business with the strategies you need to mitigate risks and ensure robust AI deployment.",
-    "date": "2024-01-01",
+    "date": "2024-05-15",
     "author": "Deval",
     "tags": [
       "AI Security",
       "Large Language Models",
       "Data Privacy",
       "Risk Mitigation",
-      "Lakera AI",
       "Security Report"
     ],
-    "company": "Lakera AI",
+    "company": "Lakera",
     "source_url": "https://www.lakera.ai/blog/ai-red-teaming"
   },
   {
-    "title": "The Beginner\u2019s Guide to Hallucinations in Large Language Models | Lakera \u2013 Protecting AI teams that disrupt the world.",
+    "title": "The Beginner’s Guide to Hallucinations in Large Language Models | Lakera – Protecting AI teams that disrupt the world.",
     "excerpt": "Unlock the secrets to safeguarding your Generative AI systems with Lakera's GenAI Security Readiness Report 2024. Gain deep insights into the most common vulnerabilities in Large Language Models and learn effective strategies to ensure your data remains secure. Delve into this essential guide and stay ahead in the rapidly evolving AI landscape.",
-    "date": "2000-01-01",
+    "date": "2023-08-23",
     "author": "Deval",
     "tags": [
       "AI Security",
@@ -531,9 +529,9 @@ export const blogData = [
     "source_url": "https://www.lakera.ai/blog/guide-to-hallucinations-in-large-language-models"
   },
   {
-    "title": "Introduction to Training Data Poisoning: A Beginner\u2019s Guide | Lakera \u2013 Protecting AI teams that disrupt the world.",
+    "title": "Introduction to Training Data Poisoning: A Beginner’s Guide | Lakera – Protecting AI teams that disrupt the world.",
     "excerpt": "Unlock the secrets to safeguarding your organization against GenAI threats with Lakera's GenAI Security Readiness Report 2024. This comprehensive guide provides actionable insights and strategies to equip you with the knowledge to protect sensitive data and navigate the evolving landscape of AI security. Download now to stay ahead in the realm of AI safety and innovation!",
-    "date": "2024-01-01",
+    "date": "2023-11-30",
     "author": "Deval",
     "tags": [
       "GenAI",
@@ -549,7 +547,7 @@ export const blogData = [
   {
     "title": "Exploring the Frontier of Edge AI: Top 5 Single Board Computers (SBCs)",
     "excerpt": "Discover how Edge AI is revolutionizing industries by enabling real-time data processing directly on devices, reducing latency, and enhancing privacy. Learn about the top Single Board Computers (SBCs) driving this transformation, offering compact, efficient solutions for smarter applications. Whether in autonomous vehicles or smart homes, these innovations are paving the way for a more connected and responsive future. Dive into the criteria for selecting the best SBCs and explore future trends in Edge AI, setting the stage for the next wave of technological advancements.",
-    "date": "2000-01-01",
+    "date": "2024-04-03",
     "author": "Deval",
     "tags": [
       "Edge AI",
@@ -564,9 +562,9 @@ export const blogData = [
     "source_url": "https://www.wevolver.com/article/exploring-the-frontier-of-edge-ai-top-5-single-board-computers-sbcs"
   },
   {
-    "title": "Reinforcement Learning: The Path to Advanced AI Solutions | Lakera \u2013 Protecting AI teams that disrupt the world.",
+    "title": "Reinforcement Learning: The Path to Advanced AI Solutions | Lakera – Protecting AI teams that disrupt the world.",
     "excerpt": "Unlock the latest insights into AI security with Lakera's 2024 GenAI Security Readiness Report. Discover key vulnerabilities in large language models and learn proactive strategies to secure your data. Essential reading for tech leaders and security professionals.",
-    "date": "2024-01-01",
+    "date": "2024-04-05",
     "author": "Deval",
     "tags": [
       "AI Security",
@@ -598,10 +596,10 @@ export const blogData = [
   {
     "title": "Intelligence at Scale Through AI Model Efficiency",
     "excerpt": "Unlock the potential of AI with a focus on efficiency. Discover how optimizing model performance can revolutionize sectors from autonomous vehicles to IoT, while minimizing environmental impact. Explore Qualcomm's pioneering efforts in AI model scaling and efficiency, crucial for sustainable technological advancements.",
-    "date": "2000-01-01",
+    "date": "2023-10-03",
     "author": "Deval",
     "tags": [
-      "artificial intelligence",
+      "AI",
       "Edge AI",
       "efficiency",
       "sustainability",
@@ -613,7 +611,7 @@ export const blogData = [
   {
     "title": "Qoitech for power analysis and battery optimisation",
     "excerpt": "Unleash the full potential of your electronic designs with the Qoitech Otii Arc Pro. This compact powerhouse offers real-time power analysis and battery optimization, essential for creating energy-efficient, high-performance devices. Discover how advanced tools like the Otii Arc Pro are revolutionizing the way engineers and developers approach power management in modern technology.",
-    "date": "2000-01-01",
+    "date": "2023-10-03",
     "author": "Deval",
     "tags": [
       "Battery life",
@@ -627,10 +625,10 @@ export const blogData = [
   {
     "title": "Understanding Neurotechnology: A multidisciplinary venture to elevate potential",
     "excerpt": "Unlock the secrets of the human brain with cutting-edge neurotechnology. Discover how neural interfaces and brain-computer interfaces are revolutionizing medicine, education, and entertainment. Learn how these innovations can restore motor functions, enhance cognitive abilities, and redefine human-machine interaction. Dive into the fascinating intersection of neuroscience and engineering, and explore the potential of neurotechnology to transform lives.",
-    "date": "2000-01-01",
+    "date": "2023-10-03",
     "author": "Deval",
     "tags": [
-      "artificial intelligence",
+      "AI",
       "neurotechnology",
       "neural network",
       "brain-computer interface",
@@ -642,10 +640,10 @@ export const blogData = [
   {
     "title": "Edge AI: A Paradigm Shift in Quality Control",
     "excerpt": "Unleash the power of Edge AI to revolutionize quality control in manufacturing. By processing data at its source, Edge AI ensures real-time analysis, immediate feedback, and rapid decision-making. This transformative technology not only boosts efficiency but also sets new standards in product reliability and safety. Discover how integrating AI directly into manufacturing systems can propel your business toward peak performance and customer satisfaction.",
-    "date": "2000-01-01",
+    "date": "2023-11-29",
     "author": "Deval",
     "tags": [
-      "artificial intelligence",
+      "AI",
       "Edge AI",
       "Industrie 4.0",
       "manufacturing systems"
@@ -655,7 +653,7 @@ export const blogData = [
   },
   {
     "title": "COCO Dataset: All You Need to Know to Get Started",
-    "excerpt": "Unlock the potential of AI with the COCO dataset\u2014your gateway to mastering computer vision. Dive into its extensive library of over 330,000 images and precise annotations, a staple for researchers and developers aiming to elevate object detection, segmentation, and captioning tasks. Discover how to harness COCO's power to enhance the capabilities and accuracy of your machine learning models.",
+    "excerpt": "Unlock the potential of AI with the COCO dataset—your gateway to mastering computer vision. Dive into its extensive library of over 330,000 images and precise annotations, a staple for researchers and developers aiming to elevate object detection, segmentation, and captioning tasks. Discover how to harness COCO's power to enhance the capabilities and accuracy of your machine learning models.",
     "date": "2023-01-19",
     "author": "Deval",
     "tags": [
@@ -704,10 +702,10 @@ export const blogData = [
   {
     "title": "Unlocking Efficiency: The AI-Powered Tiny Code Reader by Useful Sensors",
     "excerpt": "Revolutionize your data capture processes with the AI-powered Tiny Code Reader by Useful Sensors. Perfect for retail, logistics, and beyond, this compact device ensures swift and accurate QR code scanning even in challenging conditions. Discover how this innovation can boost your operational efficiency and elevate customer satisfaction.",
-    "date": "2000-01-01",
+    "date": "2024-04-08",
     "author": "Deval",
     "tags": [
-      "artificial intelligence",
+      "AI",
       "IoT",
       "sensors",
       "QR code scanning",
@@ -719,9 +717,9 @@ export const blogData = [
     "source_url": "https://www.wevolver.com/article/unlocking-efficiency-the-ai-powered-tiny-code-reader-by-useful-sensors"
   },
   {
-    "title": "Generative AI: An In-Depth Introduction | Lakera \u2013 Protecting AI teams that disrupt the world.",
+    "title": "Generative AI: An In-Depth Introduction | Lakera – Protecting AI teams that disrupt the world.",
     "excerpt": "Uncover the vulnerabilities lurking in Large Language Models with Lakera's GenAI Security Readiness Report 2024. Equip your organization with critical insights and strategies to shield against potential data breaches. This essential guide is your first step in fortifying your AI infrastructure.",
-    "date": "2000-01-01",
+    "date": "2023-11-13",
     "author": "Deval",
     "tags": [
       "GenAI",
@@ -731,13 +729,13 @@ export const blogData = [
       "LLM",
       "Cybersecurity"
     ],
-    "company": "Lakera AI",
+    "company": "Lakera",
     "source_url": "https://www.lakera.ai/blog/generative-ai"
   },
   {
-    "title": "The Ultimate Guide to Deploying Large Language Models Safely and Securely | Lakera \u2013 Protecting AI teams that disrupt the world.",
+    "title": "The Ultimate Guide to Deploying Large Language Models Safely and Securely | Lakera – Protecting AI teams that disrupt the world.",
     "excerpt": "Unlock the keys to safeguarding your AI systems with Lakera's GenAI Security Readiness Report 2024. Dive into comprehensive insights on AI vulnerabilities and discover proactive strategies to shield your data from potential threats. Elevate your security posture and stay ahead in the fast-evolving world of AI technology.",
-    "date": "2000-01-01",
+    "date": "2024-03-06",
     "author": "Deval",
     "tags": [
       "AI Security",
@@ -777,15 +775,16 @@ export const blogData = [
       "Ethics in AI"
     ],
     "company": "Aporia",
-    "source_url": "https://www.aporia.com/learn/red-teaming-large-language-models/"
+    "source_url": "https://www.aporia.com/learn/red-teaming-large-language-models/",
+    "featured": true
   },
   {
     "title": "Transforming Manufacturing with Machine Vision Technology",
     "excerpt": "Unleash the power of machine vision technology in manufacturing. Discover how integrating AI-powered systems enhances efficiency, accuracy, and safety on production lines. Explore the dynamic interaction of hardware and software, and how they revolutionize industrial operations, driving the future of smart manufacturing.",
-    "date": "2000-01-01",
+    "date": "2024-04-08",
     "author": "Deval",
     "tags": [
-      "artificial intelligence",
+      "AI",
       "automation",
       "computer vision",
       "machine learning",
@@ -795,9 +794,9 @@ export const blogData = [
     "source_url": "https://www.wevolver.com/article/transforming-manufacturing-with-machine-vision-technology"
   },
   {
-    "title": "12 Top LLM Security Tools: Paid & Free (Overview) | Lakera \u2013 Protecting AI teams that disrupt the world.",
+    "title": "12 Top LLM Security Tools: Paid & Free (Overview) | Lakera – Protecting AI teams that disrupt the world.",
     "excerpt": "Uncover the hidden vulnerabilities in Large Language Models (LLMs) with Lakera's 2024 GenAI Security Readiness Report. This essential guide offers actionable insights to safeguard your AI systems from data leakage and other security threats. Equip yourself with the knowledge to protect your business in the evolving landscape of AI technology.",
-    "date": "2000-01-01",
+    "date": "2023-12-11",
     "author": "Deval",
     "tags": [
       "LLM Security",
@@ -812,7 +811,7 @@ export const blogData = [
   {
     "title": "Vision Transformer: What It Is & How It Works [2024 Guide]",
     "excerpt": "Explore how Vision Transformers (ViTs) are revolutionizing computer vision. Discover their superior efficiency over traditional CNNs and learn about their applications and training methods. A must-read for those keen on cutting-edge AI innovations.",
-    "date": "2024-02-02",
+    "date": "2022-12-15",
     "author": "Deval",
     "tags": [
       "Vision Transformers",
@@ -860,13 +859,13 @@ export const blogData = [
   {
     "title": "Industrial Efficiency with Predictive Maintenance Solution",
     "excerpt": "Step into the future of industrial efficiency with predictive maintenance solutions. Uncover how harnessing data can revolutionize machinery upkeep, preventing costly downtime and enhancing productivity. From electrifying EV charging stations to streamlining manufacturing plants, learn how predictive intelligence is reshaping industries worldwide.",
-    "date": "2000-01-01",
+    "date": "2024-04-30",
     "author": "Deval",
     "tags": [
       "cloud manufacturing",
       "Edge AI",
       "industrial automation",
-      "IIoT",
+      "IoT",
       "predictive maintenance"
     ],
     "company": "Wevolver",
@@ -914,13 +913,13 @@ export const blogData = [
       "Semantic Search",
       "Large Language Models"
     ],
-    "company": "V7",
+    "company": "V7 Labs",
     "source_url": "https://www.v7labs.com/blog/vector-databases"
   },
   {
     "title": "Exploring the OKdo DEBIX Model B: Unleashing AI and Industrial Automation at Extreme Temperatures",
     "excerpt": "Unleash the power of AI and industrial automation with the OKdo DEBIX Model B. This robust single-board computer excels in extreme environments, ensuring reliability in manufacturing, automotive, and aerospace sectors. Discover the capabilities that make it a cornerstone for Industry 4.0.",
-    "date": "2023-08-01",
+    "date": "2024-02-06",
     "author": "Deval",
     "tags": [
       "AI",
@@ -966,7 +965,7 @@ export const blogData = [
   {
     "title": "Cross Entropy Loss: Intro, Applications, Code",
     "excerpt": "Unlock the potential of your machine learning models by mastering cross-entropy loss functions. This essential guide dives deep into their role in classification tasks, offering insights into the science of optimizing model accuracy. Perfect for data scientists and ML enthusiasts eager to enhance their understanding and improve performance outcomes.",
-    "date": "2023-01-26",
+    "date": "2023-05-04",
     "author": "Deval",
     "tags": [
       "Machine Learning",
@@ -982,7 +981,7 @@ export const blogData = [
   {
     "title": "Bridges to the Future: Revolutionizing Remote Infrastructure Management with IoT",
     "excerpt": "Discover how Remote Infrastructure Management (RIM) is transforming critical infrastructure like utilities and transportation. By integrating IoT and AI, RIM offers enhanced efficiency, reliability, and safety. Learn about the cutting-edge technologies enabling seamless management of infrastructure systems and reducing congestion in urban environments. Stay ahead of the curve with insights on how RIM is shaping the future of smart cities.",
-    "date": "2000-01-01",
+    "date": "2024-07-08",
     "author": "Deval",
     "tags": [
       "IoT",
@@ -997,7 +996,7 @@ export const blogData = [
   {
     "title": "Tech for the Planet: IoT Innovations in Environmental Monitoring and Disaster Management",
     "excerpt": "Harness the power of IoT to revolutionize environmental monitoring and disaster management. Discover how cutting-edge technology is transforming our ability to predict and respond to natural threats, ensuring a resilient and sustainable future. Dive into the world of IoT innovations and see how they empower communities worldwide.",
-    "date": "2000-01-01",
+    "date": "2024-06-10",
     "author": "Deval",
     "tags": [
       "IoT",
@@ -1028,7 +1027,7 @@ export const blogData = [
   {
     "title": "Engineer training: Mastering Machine Learning for Critical Applications",
     "excerpt": "Unlock the full potential of Machine Learning in safety-critical applications with SAE's specialized training. Equip yourself with the skills to integrate ML into safety systems while adhering to international standards, ensuring innovation doesn't compromise safety. Join industry experts in Munich and gain the expertise needed to advance your engineering career.",
-    "date": "2000-01-01",
+    "date": "2024-07-03",
     "author": "Deval",
     "tags": [
       "Automotive",
@@ -1043,7 +1042,7 @@ export const blogData = [
   {
     "title": "Connecting the Future: Bridging the Digital Divide in Intelligent Cities and Underserved Regions",
     "excerpt": "Experience the future of urban living with intelligent cities that blend technology, sustainability, and innovation. Discover how IoT, AI, and big data transform urban spaces into efficient, resilient, and livable environments. Learn about the challenges of the digital divide in underserved regions and explore strategies to ensure inclusive growth in the age of smart cities.",
-    "date": "2000-01-01",
+    "date": "2024-07-22",
     "author": "Deval",
     "tags": [
       "Smart Cities",

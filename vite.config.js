@@ -1,52 +1,58 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
+// Import visualizer conditionally
+let visualizer;
+try {
+  visualizer = (await import('rollup-plugin-visualizer')).visualizer;
+} catch (e) {
+  console.warn('Visualizer plugin not available in production');
+}
+
 export default defineConfig({
-  plugins: [react()],
-  server: {
-    port: 3000,
-    open: true,
-    host: 'localhost',
-  },
+  plugins: [
+    react(),
+    visualizer && visualizer({
+      open: true,
+      gzipSize: true,
+    }),
+  ].filter(Boolean),
   build: {
+    target: 'esnext',
+    minify: 'terser',
+    cssMinify: true,
     rollupOptions: {
       output: {
         manualChunks: {
           'vendor': [
             'react',
             'react-dom',
-            '@tanstack/react-query'  
-          ],
-          'ui': [
             '@chakra-ui/react',
-            '@chakra-ui/icons',
             '@emotion/react',
-            '@emotion/styled'
+            '@emotion/styled',
           ],
-          'animations': [
-            'framer-motion'
+          'components': [
+            './src/components/BlogCard',
+            './src/components/HeroSection',
+            './src/components/FeaturedArticleSection',
           ],
-          'icons': [
-            'lucide-react',
-            'react-icons/fa',
-            'react-icons/hi'
-          ]
-        }
-      }
+        },
+      },
+    },
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
     },
     chunkSizeWarningLimit: 1000,
-    sourcemap: true,
-    minify: 'esbuild',
-    target: 'esnext'
   },
   optimizeDeps: {
-    include: [
-      'react',
-      'react-dom',
-      '@chakra-ui/react',
-      '@tanstack/react-query',
-      'framer-motion'
-    ],
-    exclude: ['@tanstack/react-query-devtools']
-  }
+    include: ['react', 'react-dom', '@chakra-ui/react'],
+  },
+  server: {
+    port: 3000,
+    open: true,
+    host: 'localhost',
+  },
 });

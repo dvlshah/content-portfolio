@@ -1,25 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="Explore cutting-edge AI topics through insightful articles in this AI Content Portfolio.">
-    <meta name="keywords"
-        content="AI, Artificial Intelligence, Machine Learning, Content Writing, Technology">    
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- <link rel="dns-prefetch" href="https://fonts.googleapis.com" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700&display=swap" rel="stylesheet">
-    <title>AI Content Portfolio</title>
+    
+    <!-- Critical Meta Tags -->
+    <title>Content Portfolio - Technical Writing for AI Companies</title>
+    <meta name="description" content="Explore cutting-edge AI topics through insightful technical articles covering Machine Learning, LLMs, Computer Vision, and IoT.">
+    
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" as="style">
+    <link rel="preload" href="/src/index.jsx" as="script" type="module">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    
+    <!-- Critical CSS -->
+    <style>
+        /* Font loading optimization */
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: local('Inter Bold'), local('Inter-Bold'),
+                 url('https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2') format('woff2');
+        }
+        
+        /* Base styles */
+        body { 
+            margin: 0; 
+            font-family: Inter, system-ui, -apple-system, sans-serif;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+        #root { 
+            min-height: 100vh;
+        }
+        .loading { 
+            display: none;
+        }
+        
+        /* LCP optimization */
+        .chakra-heading {
+            font-family: Inter, system-ui, -apple-system, sans-serif;
+            font-weight: 700;
+            font-display: swap;
+            content-visibility: auto;
+            contain-intrinsic-size: 0 50px;
+        }
+    </style>
+    
+    <!-- Deferred CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700&display=swap" media="print" onload="this.media='all'">
+    
+    <!-- Defer non-critical Meta -->
+    <meta name="keywords" content="AI, Artificial Intelligence, Machine Learning, LLMs, Computer Vision, IoT, Technical Writing">
+    <meta name="author" content="Deval Shah">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://portfolio.neurink.ai/">
+    <meta property="og:title" content="Content Portfolio - Technical Writing for AI Companies">
+    <meta property="og:description" content="Explore cutting-edge AI topics through insightful technical articles.">
+    <meta name="theme-color" content="#ffffff">
 </head>
-
 <body>
     <div id="root"></div>
     <script type="module" src="/src/index.jsx"></script>
+    
+    <!-- Defer Analytics -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.addEventListener('load', function() {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX', {
+                send_page_view: false // Defer page view tracking
+            });
+            // Send page view after critical content loads
+            setTimeout(() => gtag('event', 'page_view'), 1000);
+        });
+    </script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "name": "Content Portfolio",
+      "description": "Technical writing portfolio showcasing AI and Machine Learning content",
+      "author": {
+        "@type": "Person",
+        "name": "Deval Shah",
+        "url": "https://portfolio.neurink.ai"
+      },
+      "specialty": ["Artificial Intelligence", "Machine Learning", "Technical Writing"],
+      "keywords": "AI, Machine Learning, LLMs, Computer Vision, IoT, Technical Writing"
+    }
+    </script>
 </body>
-
 </html>
