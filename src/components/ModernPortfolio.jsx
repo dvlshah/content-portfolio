@@ -6,7 +6,7 @@ import {
   HStack,
   Button,
   Heading,
-  SimpleGrid,
+  Grid,
   Menu,
   MenuButton,
   MenuList,
@@ -22,13 +22,14 @@ import {
   useColorMode,
   Collapse,
   Fade,
+  Tooltip,
 } from '@chakra-ui/react';
 import {
   ChevronDownIcon,
   CalendarIcon,
   ExternalLinkIcon
 } from '@chakra-ui/icons';
-import { 
+import {
   FaLinkedin, 
   FaMedium, 
   FaBuilding, 
@@ -46,9 +47,12 @@ import BlogCard from './BlogCard';
 import CompaniesSection from './CompaniesSection';
 import HeroSection from './HeroSection';
 import FeaturedArticlesSection from './FeaturedArticleSection';
+import TestimonialsSection from './TestimonialsSection';
 import SearchBar from './SearchBar';
 import ContactForm from './ContactForm';
 import useFetchBlogs from '../hooks/useFetchBlogs';
+import { format } from 'date-fns';
+import { lastUpdated } from '../data/blogData';
 
 // Predefined topics
 const TOPICS = ['All', 'Computer Vision', 'LLM', 'IoT', 'Others'];
@@ -140,6 +144,11 @@ export default function ModernPortfolio() {
 
   const hasMoreBlogs = (filteredAndSortedBlogs?.length || 0) > INITIAL_BLOG_COUNT;
 
+  const formattedLastUpdate = useMemo(() => 
+    format(new Date(lastUpdated), 'MMM d, yyyy'),
+    [lastUpdated]
+  );
+
   // Track section views
   useEffect(() => {
     const sections = ['hero', 'featured', 'search', 'companies'];
@@ -164,20 +173,50 @@ export default function ModernPortfolio() {
 
   return (
     <Box minH="100vh">
-      <Box position="fixed" top={4} right={4} zIndex={2}>
+      {/* Color Mode Toggle and Last Updated */}
+      <HStack 
+        position="fixed" 
+        top={{ base: 2, md: 4 }}
+        right={{ base: 2, md: 4 }}
+        zIndex={2}
+        spacing={{ base: 2, md: 4 }}
+      >
+        <Tooltip 
+          label="Last content update" 
+          placement="bottom"
+          hasArrow
+          isDisabled={window.innerWidth <= 768} // Disable tooltip on mobile
+        >
+          <Text
+            fontSize={{ base: "xs", md: "sm" }}
+            color={useColorModeValue('gray.600', 'gray.400')}
+            bg={useColorModeValue('white', 'gray.800')}
+            px={{ base: 2, md: 3 }}
+            py={{ base: 1, md: 2 }}
+            rounded="md"
+            shadow="sm"
+            borderWidth="1px"
+            borderColor={useColorModeValue('gray.200', 'gray.700')}
+            display={{ base: 'none', sm: 'block' }} // Hide on very small screens
+          >
+            Updated: {formattedLastUpdate}
+          </Text>
+        </Tooltip>
+
         <IconButton
           aria-label={`Switch to ${colorMode === 'light' ? 'dark' : 'light'} mode`}
-          icon={<Icon as={colorMode === 'light' ? FaMoon : FaSun} />}
+          icon={<Icon as={colorMode === 'light' ? FaMoon : FaSun} boxSize={{ base: 5, md: 6 }} />}
           onClick={toggleColorMode}
-          size="lg"
+          size={{ base: "md", md: "lg" }}
           variant="ghost"
           colorScheme="blue"
           _hover={{
             transform: 'scale(1.1)',
           }}
           transition="all 0.2s"
+          p={{ base: 2, md: 4 }}
         />
-      </Box>
+      </HStack>
 
       <div id="hero">
         <HeroSection 
@@ -191,18 +230,18 @@ export default function ModernPortfolio() {
       </div>
 
       <div id="search">
-        <Container maxW="7xl" py={16}>
-          <VStack spacing={12} align="stretch">
+        <Container maxW="7xl" px={{ base: 4, md: 8 }} py={{ base: 4, md: 16 }}>
+          <VStack spacing={{ base: 6, md: 12 }} align="stretch">
             {/* Search and Filter Section */}
             <Box 
-              p={6}
+              p={{ base: 4, md: 6 }}
               borderRadius="xl"
               bg={bgColor}
               borderWidth="1px"
               borderColor={borderColor}
               shadow="sm"
             >
-              <VStack spacing={6}>
+              <VStack spacing={{ base: 4, md: 6 }}>
                 {/* Search Bar */}
                 <Box w="full">
                   <SearchBar 
@@ -216,26 +255,45 @@ export default function ModernPortfolio() {
                 {/* Filter Controls */}
                 <Flex 
                   w="full" 
+                  direction={{ base: "column", sm: "row" }}
                   justify="space-between" 
-                  align="center"
-                  flexWrap="wrap"
-                  gap={4}
+                  align={{ base: "stretch", sm: "center" }}
+                  gap={{ base: 3, md: 4 }}
                 >
                   {/* Topics */}
-                  <HStack spacing={3} flexWrap="wrap">
-                    {TOPICS.map((topic) => (
-                      <Button
-                        key={topic}
-                        size="sm"
-                        variant={activeFilter === topic ? 'solid' : 'outline'}
-                        colorScheme="blue"
-                        rounded="full"
-                        onClick={() => handleFilterChange(topic)}
-                      >
-                        {topic}
-                      </Button>
-                    ))}
-                  </HStack>
+                  <Box 
+                    overflowX="auto" 
+                    pb={2}
+                    css={{
+                      '&::-webkit-scrollbar': {
+                        display: 'none'
+                      },
+                      'scrollbarWidth': 'none'
+                    }}
+                    maxW={{ base: "100%", sm: "70%" }}
+                  >
+                    <HStack 
+                      spacing={2} 
+                      flexWrap={{ base: "nowrap", md: "wrap" }}
+                      minW="min-content"
+                    >
+                      {TOPICS.map((topic) => (
+                        <Button
+                          key={topic}
+                          size={{ base: "xs", md: "sm" }}
+                          variant={activeFilter === topic ? 'solid' : 'outline'}
+                          colorScheme="blue"
+                          rounded="full"
+                          onClick={() => handleFilterChange(topic)}
+                          whiteSpace="nowrap"
+                          minW="auto"
+                          px={3}
+                        >
+                          {topic}
+                        </Button>
+                      ))}
+                    </HStack>
+                  </Box>
 
                   {/* Sort Menu */}
                   <Menu>
@@ -243,8 +301,9 @@ export default function ModernPortfolio() {
                       as={Button}
                       rightIcon={<ChevronDownIcon />}
                       variant="outline"
-                      size="sm"
+                      size={{ base: "sm", md: "md" }}
                       colorScheme="gray"
+                      width={{ base: "full", sm: "auto" }}
                     >
                       Sort: {sortBy}
                     </MenuButton>
@@ -280,43 +339,58 @@ export default function ModernPortfolio() {
             </Box>
 
             {/* Results Section */}
-            <VStack spacing={8} align="stretch">
-              <SimpleGrid 
-                columns={{ base: 1, md: 2, lg: 3 }} 
-                spacing={8} 
-                w="full"
+            <Box width="100%">
+              <Grid
+                templateColumns={{ base: "1fr", sm: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }}
+                gap={{ base: 4, md: 6 }}
+                width="100%"
+                px={{ base: 4, md: 6 }}
+                py={{ base: 4, md: 8 }}
+                autoRows="1fr"
               >
                 {displayedBlogs.map((blog) => (
-                  <Fade in key={blog.source_url}>
+                  <Box key={blog.source_url} height="100%">
                     <BlogCard blog={blog} />
-                  </Fade>
+                  </Box>
                 ))}
-              </SimpleGrid>
+              </Grid>
+            </Box>
 
-              {hasMoreBlogs && (
-                <Box textAlign="center" pt={4}>
-                  <Button
-                    onClick={() => setShowAllBlogs(!showAllBlogs)}
-                    variant="ghost"
-                    colorScheme="blue"
-                    size="lg"
-                    rightIcon={showAllBlogs ? <FaChevronUp /> : <FaChevronDown />}
-                    _hover={{
-                      transform: 'translateY(-2px)',
-                    }}
-                    transition="all 0.2s"
-                  >
-                    {showAllBlogs ? 'Show Less' : 'Show More'}
-                  </Button>
-                </Box>
-              )}
-            </VStack>
+            {hasMoreBlogs && (
+              <Box textAlign="center" pt={4}>
+                <Button
+                  onClick={() => setShowAllBlogs(!showAllBlogs)}
+                  size={{ base: "md", md: "lg" }}
+                  width={{ base: "90%", sm: "auto" }}
+                  mx="auto"
+                  mb={{ base: 6, md: 8 }}
+                  variant="ghost"
+                  colorScheme="blue"
+                  rightIcon={
+                    <Icon 
+                      as={showAllBlogs ? FaChevronUp : FaChevronDown} 
+                      boxSize={{ base: 4, md: 5 }}
+                    />
+                  }
+                  _hover={{
+                    transform: 'translateY(-2px)',
+                  }}
+                  transition="all 0.2s"
+                >
+                  {showAllBlogs ? 'Show Less' : 'Show More'}
+                </Button>
+              </Box>
+            )}
           </VStack>
         </Container>
       </div>
 
       <div id="companies">
         <CompaniesSection companies={companies} blogs={blogs} />
+      </div>
+
+      <div id="testimonials">
+        <TestimonialsSection />
       </div>
 
       <div id="contact">

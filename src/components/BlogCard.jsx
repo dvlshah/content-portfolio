@@ -13,8 +13,10 @@ import {
   Skeleton,
   AspectRatio,
   Icon,
+  Flex,
 } from '@chakra-ui/react';
 import { CalendarIcon } from '@chakra-ui/icons';
+import { FaBuilding } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { format } from 'date-fns';
 
@@ -59,12 +61,13 @@ const BlogCard = ({ blog, featured = false }) => {
       borderWidth="1px"
       borderColor={borderColor}
       borderRadius="xl"
-      overflow="hidden"
       bg={bgColor}
-      height="100%"
-      display="flex"
-      flexDirection="column"
+      position="relative"
+      h="full"
+      display="grid"
+      gridTemplateRows="auto 1fr auto"
       transition="all 0.2s"
+      overflow="hidden"
       _hover={{
         transform: 'translateY(-4px)',
         shadow: 'lg',
@@ -74,87 +77,107 @@ const BlogCard = ({ blog, featured = false }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
+      {/* Image Section */}
       <AspectRatio ratio={16/9}>
-        <Box position="relative">
-          <Skeleton
-            isLoaded={isImageLoaded}
-            fadeDuration={1}
-            width="100%"
-            height="100%"
-          >
-            {shouldLoad && (
-              <Image
-                src={blog.image}
-                alt={blog.title}
-                objectFit="cover"
-                width="100%"
-                height="100%"
-                loading="lazy"
-                onLoad={() => setIsImageLoaded(true)}
-                transition="opacity 0.3s"
-                opacity={isImageLoaded ? 1 : 0}
-              />
-            )}
-          </Skeleton>
-        </Box>
+        <Skeleton
+          isLoaded={isImageLoaded}
+          fadeDuration={1}
+          width="100%"
+          height="100%"
+        >
+          {shouldLoad && (
+            <Image
+              src={blog.image}
+              alt={blog.title}
+              objectFit="cover"
+              width="100%"
+              height="100%"
+              loading="lazy"
+              onLoad={() => setIsImageLoaded(true)}
+            />
+          )}
+        </Skeleton>
       </AspectRatio>
 
-      <VStack p={6} spacing={4} align="stretch" flex="1">
-        <VStack spacing={3} align="start" w="full">
-          <HStack spacing={2} justify="space-between" w="full">
-            <Tag 
-              size="md" 
-              bg={tagBg}
-              color={tagColor}
-              fontWeight="600"
-              px={3}
-              py={1}
-            >
-              {blog.company}
-            </Tag>
-            <HStack spacing={1} color={textColor} fontSize="sm">
-              <Icon as={CalendarIcon} boxSize={3} />
-              <Text>{formattedDate}</Text>
-            </HStack>
-          </HStack>
-
-          <LinkOverlay href={blog.source_url} isExternal>
-            <Heading
-              size={featured ? 'md' : 'sm'}
-              lineHeight="tight"
-              noOfLines={2}
-              color={headingColor}
-              _hover={{ color: 'blue.500' }}
-              transition="color 0.2s"
-            >
-              {blog.title}
-            </Heading>
-          </LinkOverlay>
-
-          <Text
-            color={textColor}
-            noOfLines={3}
-            fontSize="sm"
-            lineHeight="tall"
+      {/* Content Section */}
+      <Box 
+        p={{ base: 5, md: 6 }} 
+        display="flex" 
+        flexDirection="column"
+      >
+        {/* Title */}
+        <LinkOverlay href={blog.source_url} isExternal>
+          <Heading
+            as="h3"
+            size={{ base: "sm", md: "md" }}
+            color={headingColor}
+            lineHeight="tight"
+            mb={{ base: 3, md: 4 }}
           >
-            {blog.excerpt}
-          </Text>
-        </VStack>
+            {blog.title}
+          </Heading>
+        </LinkOverlay>
 
-        <HStack spacing={2} flexWrap="wrap" pt={2}>
-          {blog.tags.map((tag, index) => (
+        {/* Tags */}
+        <HStack 
+          spacing={0} 
+          gap={{ base: 1.5, md: 2 }}
+          flexWrap="wrap"
+          mb={{ base: 3, md: 4 }}
+        >
+          {blog.tags.slice(0, 3).map((tag, index) => (
             <Tag
               key={index}
-              size="sm"
+              size={{ base: "sm", md: "sm" }}
               bg={tagBg}
               color={tagColor}
-              variant="subtle"
+              px={{ base: 2, md: 3 }}
+              py={{ base: 0.5, md: 1 }}
             >
               {tag}
             </Tag>
           ))}
         </HStack>
-      </VStack>
+          
+        {/* Description */}
+        <Text 
+          color={textColor}
+          fontSize={{ base: "sm", md: "md" }}
+          noOfLines={2}
+          lineHeight="tall"
+        >
+          {blog.description}
+        </Text>
+      </Box>
+
+      {/* Metadata Section */}
+      <Box 
+        px={{ base: 5, md: 6 }}
+        pb={{ base: 5, md: 6 }}
+      >
+        <Flex 
+          justify="space-between" 
+          align="center"
+          flexWrap={{ base: "wrap", sm: "nowrap" }}
+          gap={{ base: 2, sm: 0 }}
+        >
+          <HStack spacing={1.5}>
+            <Icon as={CalendarIcon} boxSize={{ base: 3, md: 4 }} />
+            <Text fontSize={{ base: "xs", md: "sm" }} color={textColor}>
+              {formattedDate}
+            </Text>
+          </HStack>
+          
+          {blog.company && (
+            <HStack spacing={1.5}>
+              <Icon as={FaBuilding} boxSize={{ base: 3, md: 4 }} />
+              <Text fontSize={{ base: "xs", md: "sm" }} color={textColor}>
+                {blog.company}
+              </Text>
+            </HStack>
+          )}
+        </Flex>
+      </Box>
     </MotionBox>
   );
 };

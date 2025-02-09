@@ -1,31 +1,31 @@
-import { Box, Container, SimpleGrid, VStack, useColorModeValue } from '@chakra-ui/react';
+import { Box, Container, Grid, VStack, useColorModeValue } from '@chakra-ui/react';
 import SectionHeading from './SectionHeading';
 import BlogCard from './BlogCard';
 
 const FeaturedArticlesSection = ({ articles }) => {
   return (
-    <Box py={24}>
-      <Container maxW="7xl">
-        <VStack spacing={16}>
+    <Box py={{ base: 12, md: 24 }}>
+      <Container maxW="7xl" px={{ base: 4, md: 8 }}>
+        <VStack spacing={{ base: 8, md: 16 }}>
           <SectionHeading 
-            // tag="Featured Articles"
             title="Featured"
-            // subtitle="In-depth analyses and perspectives on artificial intelligence and emerging technologies"
           />
 
-          <SimpleGrid
-            columns={{ base: 1, lg: 2 }}
-            spacing={8}
+          <Grid
+            templateColumns={{ base: "1fr", lg: "repeat(2, 1fr)" }}
+            gap={{ base: 6, md: 8 }}
             w="full"
+            autoRows="1fr"
           >
             {articles.map(article => (
-              <BlogCard
-                key={article.id}
-                blog={article}
-                featured
-              />
+              <Box key={article.id} height="100%">
+                <BlogCard
+                  blog={article}
+                  featured
+                />
+              </Box>
             ))}
-          </SimpleGrid>
+          </Grid>
         </VStack>
       </Container>
     </Box>

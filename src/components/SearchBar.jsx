@@ -77,12 +77,12 @@ const SearchBar = ({ blogs, onSearch }) => {
 
   return (
     <Box position="relative" maxW="600px" mx="auto" w="full">
-      <InputGroup size="lg">
-        <InputLeftElement pointerEvents="none">
-          <Search className="text-gray-400" />
+      <InputGroup size={{ base: "md", md: "lg" }}>
+        <InputLeftElement pointerEvents="none" h={{ base: "40px", md: "48px" }}>
+          <Search className="text-gray-400" size={{ base: 18, md: 20 }} />
         </InputLeftElement>
         <Input
-          placeholder="Search articles by title, topic, or company..."
+          placeholder="Search articles..."
           value={query}
           onChange={handleSearch}
           bg={bgColor}
@@ -94,72 +94,71 @@ const SearchBar = ({ blogs, onSearch }) => {
             boxShadow: '0 0 0 1px var(--chakra-colors-blue-500)'
           }}
           rounded="full"
-          pl="45px"
+          pl={{ base: "40px", md: "45px" }}
+          h={{ base: "40px", md: "48px" }}
+          fontSize={{ base: "sm", md: "md" }}
         />
       </InputGroup>
 
       {/* Search Results Dropdown */}
-      {isOpen && searchIndex.filter(blog => 
-        query.toLowerCase().split(' ').every(term => blog.searchText.includes(term))
-      ).length > 0 && (
-        <VStack
+      {isOpen && query.trim() !== '' && (
+        <Box
           position="absolute"
           top="100%"
-          left="0"
-          right="0"
+          left={0}
+          right={0}
           mt={2}
           bg={bgColor}
-          border="1px"
+          borderWidth="1px"
           borderColor={borderColor}
           rounded="xl"
           shadow="lg"
-          maxH="400px"
+          maxH={{ base: "60vh", md: "70vh" }}
           overflowY="auto"
-          spacing={0}
           zIndex={10}
         >
-          {searchIndex.filter(blog => 
-            query.toLowerCase().split(' ').every(term => blog.searchText.includes(term))
-          ).map((result, index) => (
-            <Box
-              key={index}
-              p={4}
-              w="full"
-              cursor="pointer"
-              onClick={() => handleResultClick(result)}
-              _hover={{ 
-                bg: hoverBgColor,
-                transform: 'translateY(-1px)',
-              }}
-              transition="all 0.2s"
-              borderBottom={
-                index !== searchIndex.filter(blog => 
-                  query.toLowerCase().split(' ').every(term => blog.searchText.includes(term))
-                ).length - 1 ? '1px' : '0'
-              }
-              borderColor={borderColor}
-            >
-              <Text fontSize="sm" color="gray.500" mb={1}>
-                {result.company}
-              </Text>
-              <Text fontWeight="medium" noOfLines={1} mb={2}>
-                {result.title}
-              </Text>
-              <Flex gap={2} flexWrap="wrap">
-                {result.tags.slice(0, 3).map((tag, tagIndex) => (
-                  <Tag
-                    key={tagIndex}
-                    size="sm"
-                    colorScheme="gray"
-                    variant="subtle"
+          <VStack spacing={0} align="stretch" p={{ base: 2, md: 3 }}>
+            {searchIndex
+              .filter(blog => 
+                blog.searchText.includes(query.toLowerCase())
+              )
+              .map(result => (
+                <Box
+                  key={result.id}
+                  p={{ base: 2, md: 3 }}
+                  cursor="pointer"
+                  _hover={{ bg: hoverBgColor }}
+                  onClick={() => handleResultClick(result)}
+                  transition="background 0.2s"
+                >
+                  <Text 
+                    fontSize={{ base: "sm", md: "md" }}
+                    fontWeight="medium" 
+                    mb={2}
+                    wordBreak="break-word"
                   >
-                    {tag}
-                  </Tag>
-                ))}
-              </Flex>
-            </Box>
-          ))}
-        </VStack>
+                    {result.title}
+                  </Text>
+                  <Flex gap={2} flexWrap="wrap">
+                    {result.tags.slice(0, 2).map((tag, i) => (
+                      <Tag 
+                        key={i} 
+                        size={{ base: "sm", md: "md" }}
+                        colorScheme="blue" 
+                        variant="subtle"
+                        wordBreak="break-word"
+                        maxW="100%"
+                      >
+                        <Text isTruncated maxW="100%">
+                          {tag}
+                        </Text>
+                      </Tag>
+                    ))}
+                  </Flex>
+                </Box>
+              ))}
+          </VStack>
+        </Box>
       )}
     </Box>
   )

@@ -193,13 +193,13 @@ const HeroSection = ({ totalArticles = 0, totalCompanies = 0 }) => {
       </Box>
 
       {/* Content */}
-      <Container maxW="7xl" position="relative">
+      <Container maxW="7xl" position="relative" px={{ base: 4, md: 8 }}>
         <Grid
           templateColumns={{ base: "1fr", lg: "1fr auto" }}
-          gap={12}
+          gap={{ base: 6, md: 12 }}
           alignItems="center"
         >
-          <VStack spacing={8} align="start">
+          <VStack spacing={{ base: 6, md: 8 }} align="start">
             {/* Tag */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -216,7 +216,7 @@ const HeroSection = ({ totalArticles = 0, totalCompanies = 0 }) => {
               >
                 <Icon as={Sparkles} w={4} h={4} />
                 <Text
-                  fontSize="sm"
+                  fontSize={{ base: "xs", md: "sm" }}
                   fontWeight="medium"
                   letterSpacing="wider"
                 >
@@ -233,16 +233,17 @@ const HeroSection = ({ totalArticles = 0, totalCompanies = 0 }) => {
             >
               <Heading
                 as="h1"
-                fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }}
+                fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }}
                 fontWeight="bold"
-                lineHeight="shorter"
+                lineHeight={{ base: "1.2", md: "shorter" }}
                 letterSpacing="tight"
-                maxW="xl"
+                maxW={{ base: "100%", md: "xl" }}
                 position="relative"
               >
-                <VStack spacing={4} align="start" width="full">
+                <VStack spacing={{ base: 2, md: 4 }} align="start" width="full">
                   <Box
                     as="span"
+                    display="block"
                     position="relative"
                     _after={{
                       content: '""',
@@ -251,14 +252,13 @@ const HeroSection = ({ totalArticles = 0, totalCompanies = 0 }) => {
                       position: 'absolute',
                       bottom: 1,
                       left: 0,
-                      bg: useColorModeValue('blue.50', 'blue.900'),
+                      bg: useColorModeValue('blue.100', 'blue.900'),
                       zIndex: -1,
-                      borderRadius: 'xl',
                     }}
                   >
                     Exploring
                   </Box>
-                  <Box pl={0}>
+                  <Box as="span" display="block">
                     <RotatingText />
                   </Box>
                 </VStack>
@@ -266,21 +266,15 @@ const HeroSection = ({ totalArticles = 0, totalCompanies = 0 }) => {
             </motion.div>
 
             {/* Subtitle */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
+            <Text
+              fontSize={{ base: "md", md: "lg" }}
+              color={useColorModeValue('gray.600', 'gray.400')}
+              maxW={{ base: "100%", md: "2xl" }}
+              lineHeight="tall"
             >
-              <Text
-                fontSize={{ base: "lg", md: "xl" }}
-                color="gray.500"
-                maxW="xl"
-                lineHeight="tall"
-              >
-                Curated insights on artificial intelligence
-                and emerging technologies shaping our future
-              </Text>
-            </motion.div>
+              Curated insights on artificial intelligence
+              and emerging technologies shaping our future
+            </Text>
 
             {/* Stats */}
             <motion.div

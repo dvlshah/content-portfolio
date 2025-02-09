@@ -38,7 +38,7 @@ export default function ContactForm() {
 
   return (
     <Box 
-      p={{ base: 6, md: 8 }}
+      p={{ base: 4, md: 6, lg: 8 }}
       borderRadius="xl"
       bg={bgColor}
       borderWidth="1px"
@@ -46,19 +46,20 @@ export default function ContactForm() {
       shadow="sm"
       maxW="900px"
       mx="auto"
+      width="100%"
     >
       <form onSubmit={handleSubmit}>
-        <VStack spacing={6}>
-          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6} w="full">
+        <VStack spacing={{ base: 4, md: 6 }}>
+          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 4, md: 6 }} w="full">
             <FormControl isRequired>
               <Input
                 name="name"
                 placeholder="Your name"
-                size="lg"
-                fontSize="md"
+                size={{ base: "md", md: "lg" }}
+                fontSize={{ base: "sm", md: "md" }}
                 bg={inputBg}
                 border="none"
-                h="56px"
+                h={{ base: "48px", md: "56px" }}
                 _hover={{ bg: inputHoverBg }}
                 _focus={{
                   borderColor: 'blue.400',
@@ -74,11 +75,11 @@ export default function ContactForm() {
                 name="email"
                 type="email"
                 placeholder="your@email.com"
-                size="lg"
-                fontSize="md"
+                size={{ base: "md", md: "lg" }}
+                fontSize={{ base: "sm", md: "md" }}
                 bg={inputBg}
                 border="none"
-                h="56px"
+                h={{ base: "48px", md: "56px" }}
                 _hover={{ bg: inputHoverBg }}
                 _focus={{
                   borderColor: 'blue.400',
@@ -94,8 +95,8 @@ export default function ContactForm() {
             <Textarea
               name="message"
               placeholder="Your message..."
-              size="lg"
-              fontSize="md"
+              size={{ base: "md", md: "lg" }}
+              fontSize={{ base: "sm", md: "md" }}
               bg={inputBg}
               border="none"
               rows={4}
@@ -112,14 +113,11 @@ export default function ContactForm() {
           <Button
             type="submit"
             colorScheme="blue"
-            size="lg"
+            size={{ base: "md", md: "lg" }}
             width={{ base: "full", md: "auto" }}
             minW={{ md: "200px" }}
-            h="56px"
-            fontSize="md"
-            fontWeight="600"
             isLoading={state.submitting}
-            loadingText="Sending message..."
+            loadingText="Sending..."
             leftIcon={<Icon as={FaPaperPlane} />}
             _hover={{
               transform: 'translateY(-2px)',
